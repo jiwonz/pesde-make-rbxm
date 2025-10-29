@@ -1,0 +1,22 @@
+name = "jiwonz/pesde_make_rbxm"
+version = "0.1.0"
+description = "A simple pesde binary to make RBXM from pesde Roblox packages"
+authors = ["jiwonz <me@jiwonz.kr>"]
+repository = "https://github.com/jiwonz/pesde-make-rbxm"
+license = "MIT"
+
+[target]
+environment = "lune"
+bin = "src/main.luau"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
+
+[engines]
+pesde = "^0.7.0"
+lune = "^0.10.2"
+
+[dependencies]
+argparse = { name = "caveful_games/argparse", version = "^0.1.2" }
+dirs = { name = "jiwonz/dirs", version = "^0.6.0" }
+pathfs = { name = "jiwonz/pathfs", version = "^0.6.0" }
