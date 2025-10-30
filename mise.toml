@@ -1,0 +1,26 @@
+[settings]
+experimental = true
+
+[tools]
+"github:JohnnyMorganz/StyLua" = "latest"
+"github:JohnnyMorganz/luau-lsp" = "latest"
+"github:Kampfkarren/selene" = "latest"
+
+[tasks.test]
+description = "Test pesde-make-rbxm by making vide.rbxm"
+run = [
+	"pesde run -- gh#alicesaidhi/vide#ebbf823 -o .playground/vide-new-solver.rbxm --provider mise",
+	"pesde run -- wally#centau/vide -o .playground/vide.rbxm --provider mise"
+]
+
+[tasks.check]
+description = "Lint the source code"
+run = [
+	"selene src",
+	"stylua --check src",
+	"luau-lsp analyze src"
+]
+
+[tasks.format]
+description = "Format the source code"
+run = "stylua src"
