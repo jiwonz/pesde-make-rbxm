@@ -21,4 +21,7 @@ This script creates a pesde project in a temp directory, installs the given pack
 - [ ] rokit (not tested)
 - [ ] aftman (not tested)
 
+## TO-DOs
+- [ ] Parse exports and re-export in the entry module
+
 If no provider is given, it will look for rojo in the current environment!
