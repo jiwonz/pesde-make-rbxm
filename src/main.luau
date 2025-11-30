@@ -84,7 +84,7 @@ cli:action(function(args: {
 		local packageLinkFile =
 			pathfs.FilePath.fromExisting(robloxPackagesDir.path:join(addedPackageName):withExtension("luau"))
 		local lines = packageLinkFile:readFile():split("\n")
-		lines[1] = 'local module = require("@self/roblox_packages/vide")'
+		lines[1] = `local module = require("@self/roblox_packages/{addedPackageName}")`
 		pathfs.FilePath.new(tempDir.path:join(ENTRY_MODULE_FILE_NAME)):withFileWritten(table.concat(lines, "\n"))
 
 		-- Write default rojo project for model build
